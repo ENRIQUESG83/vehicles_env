@@ -5,6 +5,7 @@ import plotly.express as px
 # Leer los datos
 car_data = pd.read_csv(r'C:\Users\ENRIQUE SLIM\Downloads\tripleten\sprint7\proyecto\vehicles_env\vehicles_us.csv')
 
+sample_data = car_data[(car_data['odometer'] > 0) & (car_data['price'] > 0) & (car_data['odometer'] < 1000000) & (car_data['price'] < 1000000)]
 # Agregar un encabezado
 st.header("Análisis de Vehículos Usados")
 # Botones para crear gráficos
@@ -34,5 +35,6 @@ if scatter_checkbox:  # al hacer clic en gráfico de dispersión
 
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig,use_container_width=True)
+
 
 
