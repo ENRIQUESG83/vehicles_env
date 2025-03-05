@@ -4,7 +4,7 @@ import plotly.express as px
 
 
 # Leer los datos
-car_data = pd.read_csv(r'C:\Users\ENRIQUE SLIM\Downloads\tripleten\sprint7\proyecto\vehicles_env\vehicles_us.csv')
+car_data = pd.read_csv('vehicles_us.csv')
 
 sample_data = car_data[(car_data['odometer'] > 0) & (car_data['price'] > 0) & (car_data['odometer'] < 1000000) & (car_data['price'] < 1000000)]
 # Agregar un encabezado
