@@ -2,11 +2,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-
 # Leer los datos
 car_data = pd.read_csv('vehicles_us.csv')
 
-sample_data = car_data[(car_data['odometer'] > 0) & (car_data['price'] > 0) & (car_data['odometer'] < 1000000) & (car_data['price'] < 1000000)]
 # Agregar un encabezado
 st.header("Análisis de Vehículos Usados")
 # Botones para crear gráficos
@@ -29,7 +27,6 @@ if hist_checkbox:  # al hacer clic en histograma
 if scatter_checkbox:  # al hacer clic en gráfico de dispersión
     # escribir un mensaje
     st.write('Creación de un gráfico de dispersión para el conjunto de datos de anuncios de venta de coches')
-
 
     # crear un gráfico de dispersión
     fig = px.scatter(car_data, x="odometer", y="price", title="Gráfico de dispersión de venta de coches")
